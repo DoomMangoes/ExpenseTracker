@@ -23,7 +23,7 @@ class ExpenseBarWidget extends StatelessWidget {
           Center(
             child: FittedBox(
               child: Text(
-                "₱" + dayTotalAmount.toString(),
+                "₱" + dayTotalAmount.round().toString(),
                 style: TextStyle(
                     fontFamily: 'Quicksand',
                     color: Colors.black,
