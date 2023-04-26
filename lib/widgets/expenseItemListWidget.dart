@@ -32,8 +32,11 @@ class ExpenseItemListWidget extends StatelessWidget {
               Container(
                 height: 200,
                 width: 200,
-                child: const Image(
-                  image: AssetImage("assets/images/waiting.png"),
+                child: Opacity(
+                  opacity: 0.5,
+                  child: Image(
+                    image: AssetImage("assets/images/waiting.png"),
+                  ),
                 ),
               ),
             ],
