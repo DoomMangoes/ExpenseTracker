@@ -42,7 +42,7 @@ class ExpenseChartWidget extends StatelessWidget {
   }
 
   double getBarValue(double dailyTotal, double weeklyTotal) {
-    return dailyTotal / weeklyTotal;
+    return weeklyTotal != 0 ? dailyTotal / weeklyTotal : 0;
   }
 
   @override
