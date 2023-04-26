@@ -47,10 +47,10 @@ class ExpenseBarWidget extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
-                    height: 70 * .5,
+                    height: barValue != 0 ? 68 * barValue : 68,
                     width: 20,
                     decoration: BoxDecoration(
-                      color: Colors.purple,
+                      color: barValue != 0 ? Colors.purple : Colors.grey,
                       borderRadius: const BorderRadius.all(Radius.circular(20)),
                     ),
                   ),

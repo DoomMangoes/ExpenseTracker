@@ -17,7 +17,9 @@ class ExpenseChartWidget extends StatelessWidget {
     List<ExpenseItem> dayItems = items
         .where((item) =>
             DateFormat.yMd().format(item.date).toString() ==
-            DateFormat.yMd().format(DateTime.now()).toString())
+            DateFormat.yMd()
+                .format(DateTime.now().subtract(Duration(days: dayOffset)))
+                .toString())
         .toList();
 
     if (dayItems.isNotEmpty) {
