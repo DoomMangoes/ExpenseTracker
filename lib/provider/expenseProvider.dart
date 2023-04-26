@@ -3,9 +3,7 @@ import '../models/expenseItem.dart';
 import 'dart:collection';
 
 class ExpenseProvider extends ChangeNotifier {
-  final List<ExpenseItem> _items = [
-    ExpenseItem(title: "Groceries", amount: 1750.99, date: DateTime.now()),
-  ];
+  final List<ExpenseItem> _items = [];
 
   //Read only view
   UnmodifiableListView<ExpenseItem> get items => UnmodifiableListView(_items);
