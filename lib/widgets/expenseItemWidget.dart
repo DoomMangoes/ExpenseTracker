@@ -52,44 +52,34 @@ class ExpenseItemWidget extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 15.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  expenseItem.title,
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontFamily: 'OpenSans',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 17,
-                  ),
+          Expanded(
+            child: ListTile(
+              title: Text(
+                expenseItem.title,
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 17,
                 ),
-                Text(
-                  DateFormat.yMMMMd().format(expenseItem.date),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xFF828282),
-                    fontFamily: 'Quicksand',
-                    fontSize: 15,
-                  ),
+              ),
+              subtitle: Text(
+                DateFormat.yMMMMd().format(expenseItem.date),
+                style: TextStyle(
+                  color: Color(0xFF828282),
+                  fontFamily: 'Quicksand',
+                  fontSize: 15,
                 ),
-              ],
-            ),
-          ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * .35,
-          ),
-          IconButton(
-            onPressed: () {
-              context.read<ExpenseProvider>().remove(expenseItem);
-            },
-            icon: Icon(
-              Icons.delete,
-              color: Colors.red,
+              ),
+              trailing: IconButton(
+                onPressed: () {
+                  context.read<ExpenseProvider>().remove(expenseItem);
+                },
+                icon: Icon(
+                  Icons.delete,
+                  color: Colors.red,
+                ),
+              ),
             ),
           ),
         ],
