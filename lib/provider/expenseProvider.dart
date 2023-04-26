@@ -5,7 +5,6 @@ import 'dart:collection';
 class ExpenseProvider extends ChangeNotifier {
   final List<ExpenseItem> _items = [
     ExpenseItem(title: "Groceries", amount: 1750.99, date: DateTime.now()),
-    ExpenseItem(title: "New Shoes", amount: 999.99, date: DateTime.now()),
   ];
 
   //Read only view

@@ -101,9 +101,9 @@ class _AddExpenseItemWidgetState extends State<AddExpenseItemWidget> {
             TextField(
               maxLines: 1,
               controller: _amountController,
-              keyboardType: TextInputType.number,
+              keyboardType: TextInputType.numberWithOptions(decimal: true),
               inputFormatters: <TextInputFormatter>[
-                FilteringTextInputFormatter.digitsOnly
+                FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),
               ],
               decoration: InputDecoration(
                 labelText: "Amount",
