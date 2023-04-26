@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../provider/expenseProvider.dart';
 import '../models/expenseItem.dart';
@@ -68,7 +69,7 @@ class ExpenseItemWidget extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  expenseItem.formattedDate,
+                  DateFormat.yMMMMd().format(expenseItem.date),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Color(0xFF828282),
@@ -80,7 +81,7 @@ class ExpenseItemWidget extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: 90,
+            width: MediaQuery.of(context).size.width * .35,
           ),
           IconButton(
             onPressed: () {

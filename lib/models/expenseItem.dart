@@ -5,12 +5,10 @@ class ExpenseItem {
   String title;
   double amount;
   DateTime date;
-  final String formattedDate;
   final String uuid;
 
   ExpenseItem({required this.title, required this.amount, required this.date})
-      : uuid = const Uuid().v4(),
-        formattedDate = DateFormat.yMMMMd().format(date);
+      : uuid = const Uuid().v4();
 
   @override
   bool operator ==(covariant ExpenseItem other) => uuid == other.uuid;
