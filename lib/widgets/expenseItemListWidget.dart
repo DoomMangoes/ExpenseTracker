@@ -12,9 +12,8 @@ class ExpenseItemListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final expenseItems = context.select<ExpenseProvider, List<ExpenseItem>>(
-      (provider) => provider.items,
-    );
+    final provider = Provider.of<ExpenseProvider>(context);
+    final UnmodifiableListView<ExpenseItem> expenseItems = provider.items;
 
     return expenseItems.isEmpty
         ? Column(

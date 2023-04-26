@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/expenseItem.dart';
@@ -9,9 +11,8 @@ class ExpenseChartWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final expenseItems = context.select<ExpenseProvider, List<ExpenseItem>>(
-      (provider) => provider.items,
-    );
+    final provider = Provider.of<ExpenseProvider>(context);
+    final UnmodifiableListView<ExpenseItem> expenseItems = provider.items;
 
     return Padding(
       padding: const EdgeInsets.all(16.0),
