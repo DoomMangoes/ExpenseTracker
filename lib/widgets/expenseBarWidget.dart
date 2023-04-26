@@ -3,8 +3,13 @@ import 'package:intl/intl.dart';
 
 class ExpenseBarWidget extends StatelessWidget {
   final int dayOffset;
-
-  const ExpenseBarWidget({super.key, required this.dayOffset});
+  final double barValue;
+  final double dayTotalAmount;
+  const ExpenseBarWidget(
+      {super.key,
+      required this.dayOffset,
+      required this.barValue,
+      required this.dayTotalAmount});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +23,7 @@ class ExpenseBarWidget extends StatelessWidget {
           Center(
             child: FittedBox(
               child: Text(
-                "₱1750.99",
+                "₱" + dayTotalAmount.toString(),
                 style: TextStyle(
                     fontFamily: 'Quicksand',
                     color: Colors.black,
@@ -53,7 +58,7 @@ class ExpenseBarWidget extends StatelessWidget {
               )),
           Text(
             DateFormat.E()
-                .format(DateTime.now().subtract(new Duration(days: dayOffset))),
+                .format(DateTime.now().subtract(Duration(days: dayOffset))),
           )
         ],
       ),
