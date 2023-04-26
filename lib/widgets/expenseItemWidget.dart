@@ -43,7 +43,7 @@ class ExpenseItemWidget extends StatelessWidget {
             child: Center(
               child: FittedBox(
                 child: Text(
-                  "₱" + expenseItem.amount.toString(),
+                  "₱" + expenseItem.amount.toStringAsFixed(2),
                   style: TextStyle(
                     fontFamily: 'Quicksand',
                     color: Colors.white,
