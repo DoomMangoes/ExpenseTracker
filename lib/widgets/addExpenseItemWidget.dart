@@ -37,7 +37,7 @@ class _AddExpenseItemWidgetState extends State<AddExpenseItemWidget> {
             context: context,
             initialDate: DateTime.now(),
             firstDate: DateTime(1970),
-            lastDate: DateTime(2100))
+            lastDate: DateTime.now())
         .then((value) {
       setState(() {
         _date = value;
