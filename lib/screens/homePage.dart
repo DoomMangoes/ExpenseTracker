@@ -33,15 +33,17 @@ class _HomePageState extends State<HomePage> {
               icon: const Icon(Icons.add))
         ],
       ),
-      body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          ExpenseChartWidget(),
-          ExpenseItemListWidget(),
-        ],
-      )),
+      body: SingleChildScrollView(
+        child: Center(
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            ExpenseChartWidget(),
+            ExpenseItemListWidget(),
+          ],
+        )),
+      ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.yellow,
         onPressed: () {

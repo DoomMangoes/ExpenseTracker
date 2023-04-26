@@ -44,7 +44,6 @@ class ExpenseItemListWidget extends StatelessWidget {
         : ListView.separated(
             shrinkWrap: true,
             padding: EdgeInsets.all(16),
-            physics: BouncingScrollPhysics(),
             separatorBuilder: (context, index) => Container(height: 8),
             itemCount: expenseItems.length,
             itemBuilder: (BuildContext context, int index) {
